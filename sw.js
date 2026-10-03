@@ -1,5 +1,5 @@
 // Service Worker: hält App und (verschlüsselte) Noten offline bereit.
-const SHELL = "chornoten-shell-v2";
+const SHELL = "chornoten-shell-v3";
 const DATA = "chornoten-data";
 const SHELL_FILES = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest",
   "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png"];
