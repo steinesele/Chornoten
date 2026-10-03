@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#7a1e24">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chornoten">
+<title>Chornoten</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Anmeldung -->
+<section id="login" class="screen" hidden>
+  <div class="login-card">
+    <img src="icons/icon-192.png" alt="" class="login-icon">
+    <h1>Chornoten</h1>
+    <p class="sub">Bitte das Passwort des Chors eingeben.</p>
+    <form id="loginForm" autocomplete="on">
+      <input type="text" name="username" value="chor" autocomplete="username" hidden>
+      <input id="pw" type="password" autocomplete="current-password" placeholder="Passwort" required>
+      <label class="check"><input id="remember" type="checkbox" checked> Auf diesem Gerät angemeldet bleiben</label>
+      <button type="submit" id="loginBtn">Öffnen</button>
+      <p id="loginMsg" class="msg" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<!-- Inhaltsverzeichnis -->
+<section id="list" class="screen" hidden>
+  <header class="bar">
+    <h1 id="listTitle">Noten</h1>
+    <button id="logoutBtn" class="ghost" title="Abmelden">Abmelden</button>
+  </header>
+  <ol id="songs" class="songs"></ol>
+  <footer class="status">
+    <span id="offlineStatus">Prüfe Offline-Speicher …</span>
+    <span id="installHint" hidden>Tipp: Über „Teilen“ → „Zum Home-Bildschirm“ als App speichern.</span>
+  </footer>
+</section>
+
+<!-- Notenansicht -->
+<section id="viewer" class="screen" hidden>
+  <header class="vbar" id="vbar">
+    <button id="backBtn" class="ghost" aria-label="Zurück">‹ Liste</button>
+    <div class="vtitle"><span id="vTitle"></span><small id="vPage"></small></div>
+    <div class="vtools">
+      <button id="fitBtn" class="ghost" title="Ganze Seite / Breite">Breite</button>
+      <button id="nightBtn" class="ghost" title="Nachtmodus">Nacht</button>
+    </div>
+  </header>
+  <div id="pages" class="pages"></div>
+  <button class="nav prev" id="prevBtn" aria-label="Vorherige Seite">‹</button>
+  <button class="nav next" id="nextBtn" aria-label="Nächste Seite">›</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
